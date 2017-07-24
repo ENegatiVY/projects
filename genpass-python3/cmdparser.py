@@ -49,6 +49,25 @@ def parser():
     return (args, person_list)
 
 
-
-if __name__=='__main__':
-    parser()
+def init_dict_fromfile(filename):
+    dictionary={}
+    file=open(filename,'r',encoding='utf-8')
+    file_content=file.read()
+    file.close()
+    dictionary['name'] = re.findall('name:(.*)',file_content)[0].split(' ')
+    dictionary['username'] = re.findall('username:(.*)', file_content)[0].split(' ')
+    dictionary['qq'] = re.findall('qq:(.*)', file_content)[0].split(' ')
+    dictionary['email'] = re.findall('email:(.*)', file_content)[0].split(' ')
+    dictionary['mobile'] = re.findall('mobile:(.*)', file_content)[0].split(' ')
+    birthday = re.findall('birthday:(.*)', file_content)[0].split(' ')
+    dictionary['birthday'] = [time.strptime(birthday[0],'%Y-%m-%d')]
+    dictionary['company'] = re.findall('company:(.*)', file_content)[0].split(' ')
+    dictionary['with_dict']=False
+    dictionary['output_file']=False
+    for key in dictionary:
+        if dictionary[key]==['']:
+            dictionary[key]=[]
+    print(dictionary)
+    return dictionary
+# if __name__=='__main__':
+#     parser()

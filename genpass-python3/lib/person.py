@@ -29,6 +29,7 @@ class Person(object):
     def __init__(self, information=None, field_map=()):
         self.information = {} if information is None else information
         self.field_map = field_map if field_map else BUILT_IN_FIELD_MAP
+        print(self.information)
 
     def generate_source_dict(self):
         '''generate source dictionary `source_dict`.
@@ -119,6 +120,19 @@ class Person(object):
         '''
         for res in (zip(dependence.keys(), i) for i in product(*dependence.values())):
             yield dict(res)
+
+    def generate_username(self):
+        user_list=['admin']
+        email_name_list=[]
+        user_list+=[i for i in self.information['username']]
+        user_list+=[j for j in self.information['email']]
+        for i in self.information['email']:
+            email_name_list+=re.findall('(.*)@',i)
+        for email_name in email_name_list:
+            if email_name not in user_list:
+                user_list.append(email_name)
+        print(user_list)
+        return user_list
 
     def generate_password(self):
         '''A generator yield passwords
