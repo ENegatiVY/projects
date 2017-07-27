@@ -1,0 +1,55 @@
+登录
+注册
+ID
+用户名
+注册
+手机
+用户
+信息
+输入
+密码
+确认
+加入
+官方
+邮箱
+其他
+账号
+返回
+设置
+退出
+验证码
+欢迎
+地址
+手机号
+显示
+开启
+自动
+保持
+在线
+Account
+account
+log in
+Log in
+Log In
+Sign Up
+Sign up
+sign up
+Sign In
+Sign in
+sign in
+Forgot
+forgot
+password
+Password
+User
+Name
+Email
+email
+E-mail
+Enter
+New
+confirmation
+Confirmation
+Profile
+Back
+Already
